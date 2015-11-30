@@ -21,7 +21,7 @@ def toVector(prenom):
     for c in prenom:
         if i >= 25:
             break
-        res[i] = ord(c)
+        res[i] = ord(c.upper())
         i += 1
     return res
 
