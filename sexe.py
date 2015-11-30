@@ -1,20 +1,23 @@
 #!/usr/bin/env python2
 
 import sys
+import sklearn.neural_network as nn
 
 data = []
 values = []
+clf = None
 
 def digest():
-	global data
-	pass
+	global data, values, clf
+	clf = nn.MLPClassifier()
+	clf.fit(data, values)
 
 def compute(prenom):
-	return False
+	return clf.predict(toVector(prenom))
 
 def toVector(prenom):
 	res = [0] * 100
-	i = 0;
+	i = 0
 	for c in prenom:
 		res[i] = ord(c)
 		i += 1
